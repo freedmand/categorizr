@@ -4,6 +4,7 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%svelte.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Categorizr</title>
 		%svelte.head%
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,12 +13,87 @@
 			rel="stylesheet"
 		/>
 		<style>
+			:root {
+				--blue: #1760a3;
+				--deep-blue: #233962;
+				--black: #000;
+				--white: #fff;
+				--gray: #767676;
+				--shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+				--big-shadow: 2px 8px 8px rgba(0, 0, 0, 0.25);
+				--tight-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+				--font-size-small: 14px;
+				--font-size-med: 18px;
+				--font-size-big: 41px;
+				--radius: 6px;
+				--font-default: Inter, sans-serif;
+				--font-styled: Lobster, cursive;
+				--transition: 0.2s ease;
+				--app-margin: 16px;
+			}
+
+			html,
 			body {
-				font-family: Inter, sans-serif;
+				padding: 0;
+				margin: 0;
+			}
+
+			body {
+				font-family: var(--font-default);
+				font-size: var(--font-size-small);
+				background: var(--deep-blue);
+				color: var(--black);
+				line-height: 1.3;
 			}
 
 			h1 {
-				font-family: Lobster, cursive;
+				font-family: var(--font-styled);
+				font-size: var(--font-size-big);
+				color: var(--white);
+				padding: 20px 0;
+				margin: 0;
+				text-shadow: var(--shadow);
+			}
+
+			header {
+				background: var(--blue);
+				margin: 0;
+				padding: 0 24px;
+			}
+
+			button {
+				background: var(--blue);
+				color: var(--white);
+				font-size: var(--font-size-med);
+				font-family: var(--font-default);
+				font-weight: bold;
+				border: none;
+				box-shadow: var(--shadow);
+				border-radius: var(--radius);
+				padding: 8px 16px;
+				cursor: pointer;
+				transition: box-shadow var(--transition);
+			}
+
+			button:hover {
+				box-shadow: var(--big-shadow);
+			}
+
+			button:active {
+				box-shadow: var(--tight-shadow);
+			}
+
+			input {
+				font-size: var(--font-size-med);
+				font-family: var(--font-default);
+				border-radius: var(--radius);
+				box-shadow: var(--shadow);
+				border: none;
+			}
+
+			h2 {
+				font-size: var(--font-size-med);
+				color: var(--blue);
 			}
 		</style>
 	</head>
